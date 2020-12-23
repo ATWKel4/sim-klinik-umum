@@ -1,62 +1,60 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Nama : Sistem Informasi Manajemen Klinik Umum
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Deskripsi : Untuk satu dokter saja, ada sisi user dan sisi klink
 
-## About Laravel
+Sisi user (web) : Bisa login, pilih keluhan, booking, dan antri
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Sisi Klinik (web) : Bisa registrasi user/member/pasien baru, bisa nampilkan antrian terkini, bisa memasukkan resep obat apa saja dari dokter ke bagian farmasi, bisa cetak report hari ini, set jadwal, cetak invoice buat bayar obat 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Fitur Klinik :
+Registrasi pasien (users)
+Jadwal Klinik (jadwal)
+Antrian (users_id, antrian, jadwal_id)
+Rekam Medis (users_id, penyakit_id, resep_id, tindakan_id, jadwal_id, rekam)
+Resep pasien (obat_id, rekam_id, resep)
+Invoice (resep_id, invoice)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Fitur User :
+Register/Login (users)
+Booking (users_id, antrian_id, booking)
+Antrian (users_id, antrian, jadwal_id)
 
-## Learning Laravel
+Users { id, nama, tanggal_lahir, alamat, jenis_kelamin }
+Jadwal { id, hari, tanggal, waktu }
+Antrian { id, jadwal_id, users_id }
+Rekam { id, users_id, penyakit_id, tindakan_id, resep_id, jadwal_id }
+Resep { id, obat_id, rekam_id, catatan }
+Obat { id, nama, kegunaan, dosis, kategori, harga, stock, aturan_pakai, tanggal_kadaluarsa }
+Invoice { id, resep_id, harga_total, catatan, status, tanggal_pembayaran }
+Booking { id, users_id, antrian_id }
+Penyakit { id, nama }
+Tindakan { id, diagnosis, deskripsi }
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# Petunjuk Set-up
+## Awal Clone/pull
+- Masuk ke folder project
+- Gunakan perintah "composer install"
+- "npm install" (opsional kalau ndak ada ketergantungan dengan javascript)
+- Buat copy dari file yang namanya .env.example lalu ganti namanya menjadi .env
+- lalu jalankan "php artisan key:generate" untuk membuat kode (untuk encoding)
+- coba run dengan "php artisan serve"
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Proses Pengerjaan dengan Backend DB
+- "git pull origin <nama_branch>" diusahakan setiap kali sebelum mengerjakan sesuatu agar mengikuti update terbaru dahulu
+- isilah variabel konstanta DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, dan DB_PASSWORD sesuai keterangan database
+- untuk menyamakan database run "php artisan migrate"
+- lalu jalankan kembali dengan "php artisan serve"
 
-## Laravel Sponsors
+## Proses Pengerjaan dengan Backend DB yang Telah Ada Isi Default (Seeder)
+- Gunakan perintah "php artisan migrate:refresh --seed"
+- cek db (seperti localhost/phpmyadmin) apakah sudah ada isi defaultnya?
+- lalu jalankan kembali dengan "php artisan serve"
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Mengatasi Conflict Saat Ingin Push ke Branch
+- simpan dulu aktivitas perubahan Anda yang terakhir dengan "git add .", "git commit -m <pesan>"
+- pull lagi branchnya untuk mendapatkan perubahan terbaru
+- pilih perubahan mana yang ingin disimpan dengan menggunaka bantuan dari editor vscode atau "git mergetool"
+- lalu push kembali ke branch dengan "git push -u origin <nama_branch>"
+    
+## Mengatasi Apabila Tidak Muncul Gambar Setalah Pull (21/11/2020)
+- jalankan php artisan storage:link (untuk membuat shortcut/symbolic link ke folder storage yang awalnya tidak ada)
