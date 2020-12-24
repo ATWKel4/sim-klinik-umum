@@ -22,13 +22,13 @@ Antrian (users_id, antrian, jadwal_id)
 Users { id, nama, tanggal_lahir, alamat, jenis_kelamin }
 Jadwal { id, hari, tanggal, waktu }
 Antrian { id, jadwal_id, users_id }
-Rekam { id, users_id, penyakit_id, tindakan_id, resep_id, jadwal_id }
-Resep { id, obat_id, rekam_id, catatan }
-Obat { id, nama, kegunaan, dosis, kategori, harga, stock, aturan_pakai, tanggal_kadaluarsa }
-Invoice { id, resep_id, harga_total, catatan, status, tanggal_pembayaran }
 Booking { id, users_id, antrian_id }
 Penyakit { id, nama }
 Tindakan { id, diagnosis, deskripsi }
+Obat { id, nama, kegunaan, dosis, kategori, harga, stock, aturan_pakai, tanggal_kadaluarsa }
+Resep { id, obat_id, catatan }
+Rekam { id, users_id, penyakit_id, tindakan_id, resep_id, jadwal_id }
+Invoice { id, resep_id, harga_total, catatan, status, tanggal_pembayaran }
 
 # Petunjuk Set-up
 ## Awal Clone/pull
