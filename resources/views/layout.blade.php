@@ -24,9 +24,9 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
-      <h1>Welcome to Medilab</h1>
-      <h2>We are team of talanted designers making websites with Bootstrap</h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      <h1>Selamat datang di Klinik<h1>
+      <h2>Kami melayani dengan sepenuh hati</h2>
+      <a href="#about" class="btn-get-started scrollto"><b>Ambil nomor antrian</b></a>
     </div>
   </section><!-- End Hero -->
 
