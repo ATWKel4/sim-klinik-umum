@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('user.home');
 });
 
+Route::get('/home', function () {
+    return view('user.login');
+});
+
 // ROUTE : ADMIN
 
 Route::prefix('admin')->group(function() {

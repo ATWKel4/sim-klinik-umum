@@ -13,13 +13,13 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  @include('style')
+  @include('user.style')
 
 </head>
 
 <body>
 
-    @include('header')
+    @include('user.header')
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -36,12 +36,12 @@
 
   </main><!-- End #main -->
 
-  @include('footer')
+  @include('user.footer')
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-  @include('script')
+  @include('user.script')
 
 </body>
 
