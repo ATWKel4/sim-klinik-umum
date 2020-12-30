@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('user.layout')
 @section('content')
 <!-- ======= Why Us Section ======= -->
 <section id="why-us" class="why-us">

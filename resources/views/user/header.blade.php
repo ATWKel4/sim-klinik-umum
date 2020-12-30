@@ -37,7 +37,7 @@
     </ul>
     </nav><!-- .nav-menu -->
 
-    <a href="#appointment" class="appointment-btn scrollto"><b>Jadwalkan konsultasi</b></a>
+    <a href="#appointment" class="appointment-btn scrollto"><b>Login</b></a>
 
 </div>
 </header><!-- End Header -->
