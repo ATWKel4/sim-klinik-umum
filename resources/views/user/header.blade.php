@@ -30,7 +30,6 @@
         <li><a href="#about">Tentang klinik</a></li>
         <li><a href="#services">Pelayanan</a></li>
         <li><a href="#Dokter">Dokter</a></li>
-        </li>
         <li><a href="#contact">Kontak kami</a></li>
 
     </ul>
