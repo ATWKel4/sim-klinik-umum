@@ -1,5 +1,6 @@
 @extends('admin.main.layout')
 @section('content')
+@include('admin.main.header')
 <!-- Page content -->
 <div class="container-fluid mt--6">
     <div class="row">

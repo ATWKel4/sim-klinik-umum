@@ -18,8 +18,16 @@ Route::get('/', function () {
     return view('user.home');
 });
 
-Route::get('/home', function () {
+Route::get('/masuk', function () {
     return view('user.login');
+});
+
+Route::get('/obat', function () {
+    return view('admin.main.obat.index');
+});
+
+Route::get('/profile', function () {
+    return view('user.main.profile');
 });
 
 // ROUTE : ADMIN

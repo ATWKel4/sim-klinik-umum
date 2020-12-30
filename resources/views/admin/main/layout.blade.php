@@ -26,7 +26,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @include('admin.main.sidebar')
   <!-- Main content -->
   <div class="main-content" id="panel">
-  @include('admin.main.header')
+  {{-- @include('admin.main.header') --}}
   @yield('content')
   </div>
   @include('admin.main.script')

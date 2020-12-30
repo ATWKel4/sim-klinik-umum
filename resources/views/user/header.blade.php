@@ -35,7 +35,7 @@
     </ul>
     </nav><!-- .nav-menu -->
 
-    <a href="#appointment" class="appointment-btn scrollto"><b>Login</b></a>
+    <a href="{{ URL::to('/masuk') }}" class="appointment-btn scrollto"><b>Login</b></a>
 
 </div>
 </header><!-- End Header -->
