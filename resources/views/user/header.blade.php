@@ -29,15 +29,13 @@
         <li class="active"><a href="index.html">Beranda</a></li>
         <li><a href="#about">Tentang klinik</a></li>
         <li><a href="#services">Pelayanan</a></li>
-        <!-- <li><a href="#departments">Departments</a></li> -->
         <li><a href="#Dokter">Dokter</a></li>
-        </li>
         <li><a href="#contact">Kontak kami</a></li>
 
     </ul>
     </nav><!-- .nav-menu -->
 
-    <a href="#appointment" class="appointment-btn scrollto"><b>Jadwalkan konsultasi</b></a>
+    <a href="#appointment" class="appointment-btn scrollto"><b>Login</b></a>
 
 </div>
 </header><!-- End Header -->
