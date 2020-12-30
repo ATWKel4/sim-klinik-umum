@@ -26,7 +26,7 @@
     <div class="container">
       <h1>Selamat datang di Klinik<h1>
       <h2>Kami melayani dengan sepenuh hati</h2>
-      <a href="#about" class="btn-get-started scrollto"><b>Ambil nomor antrian</b></a>
+      <a href="#about" class="btn-get-started scrollto"><b>Login</b></a>
     </div>
   </section><!-- End Hero -->
 
