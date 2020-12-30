@@ -29,7 +29,6 @@
         <li class="active"><a href="index.html">Beranda</a></li>
         <li><a href="#about">Tentang klinik</a></li>
         <li><a href="#services">Pelayanan</a></li>
-        <!-- <li><a href="#departments">Departments</a></li> -->
         <li><a href="#Dokter">Dokter</a></li>
         </li>
         <li><a href="#contact">Kontak kami</a></li>
