@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TindakanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,8 @@ Route::get('/masuk', function () {
 Route::get('/obat', function () {
     return view('admin.main.obat.index');
 });
+
+Route::get('/tindakan', [TindakanController::class, 'index']);
 
 Route::get('/profile', function () {
     return view('user.main.profile');
