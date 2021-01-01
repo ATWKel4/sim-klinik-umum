@@ -6,13 +6,13 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Klinik Dokter</h3>
+            <h3>Klinik Sehat</h3>
             <p>
               Jl. Raya ITS Sukolilo<br>
               Surabaya, SBY 60111<br>
               Indonesia <br><br>
               <strong>Nomor Handphone:</strong> +62 812 3456 7890<br>
-              <strong>Email:</strong> dr.bramantyo@klinik.com<br>
+              <strong>Email:</strong> klinik.sehat@mail.com<br>
             </p>
           </div>
 
@@ -43,14 +43,14 @@
 
       <div class="mr-md-auto text-center text-md-left">
         <div class="copyright">
-          &copy; Copyright <strong><span>Medilab</span></strong>. All Rights Reserved
+          &copy; hak cipta <strong><span>Klinik Sehat</span></strong>. Seluruh hak cipta
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Didesain oleh <a href="https://bootstrapmade.com/"> Tim klinik Sehat</a>
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">

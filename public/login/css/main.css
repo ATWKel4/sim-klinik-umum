@@ -171,6 +171,16 @@ iframe {
   width: 100%;
 }
 
+.login100-form-logo {
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+
 .login100-form-title {
   display: block;
   font-family: OpenSans-Regular;
