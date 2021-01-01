@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PenyakitController;
+use App\Http\Controllers\TindakanController;
+use App\Http\Controllers\JadwalController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routess
@@ -27,6 +30,8 @@ Route::get('/obat', function () {
 });
 
 Route::get('/penyakit', [PenyakitController::class, 'index']);
+Route::get('/tindakan', [TindakanController::class, 'index']);
+Route::get('/jadwal', [JadwalController::class, 'index']);
 
 Route::get('/profile', function () {
     return view('user.main.profile');
