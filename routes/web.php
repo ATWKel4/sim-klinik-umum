@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\PenyakitController;
 /*
 |--------------------------------------------------------------------------
 | Web Routess
@@ -25,6 +25,8 @@ Route::get('/masuk', function () {
 Route::get('/obat', function () {
     return view('admin.main.obat.index');
 });
+
+Route::get('/penyakit', [PenyakitController::class, 'index']);
 
 Route::get('/profile', function () {
     return view('user.main.profile');
