@@ -52,9 +52,9 @@ class AuthController extends Controller
       ]);
 
       if (Auth::guard('user')->attempt(['username' => $request->username, 'password' => $request->password])) {
-        return redirect()->intended('/dashboard');
+        return redirect()->intended('/beranda');
       }else{
-        return redirect()->intended('/login');
+        return redirect()->intended('/masuk');
       }
     }
 
@@ -65,7 +65,7 @@ class AuthController extends Controller
         return redirect('/admin/login');
       } else if (Auth::guard('user')->check()) {
         Auth::guard('user')->logout();
-        return redirect('/login');
+        return redirect('/masuk');
       }
 
       return redirect('/');
