@@ -15,8 +15,32 @@ class TindakanSeeder extends Seeder
     public function run()
     {
         Tindakan::create([
-            'diagnosis' => 'dummy',
-            'deskripsi' => 'dummy',
+            'diagnosis' => 'demam',
+            'deskripsi' => 'suhu badan sangat tinggi',
+        ]);
+        Tindakan::create([
+            'diagnosis' => 'influenza',
+            'deskripsi' => 'suhu badan tinggi, batuk ringan',
+        ]);
+        Tindakan::create([
+            'diagnosis' => 'batuk',
+            'deskripsi' => 'batuk berdahak',
+        ]);
+        Tindakan::create([
+            'diagnosis' => 'cacar air',
+            'deskripsi' => 'demam, sakit tenggorokan, ruam kemerahan, selera makan menurun',
+        ]);
+        Tindakan::create([
+            'diagnosis' => 'tuberkulosis',
+            'deskripsi' => 'sesak napas, nyeri dada saat batuk, batuk berdarah',
+        ]);
+        Tindakan::create([
+            'diagnosis' => 'hipertensi',
+            'deskripsi' => 'sakit kepala, lemas, nyeri dada',
+        ]);
+        Tindakan::create([
+            'diagnosis' => 'hipotensi',
+            'deskripsi' => 'pusing, mual, pandangan buram',
         ]);
     }
 }

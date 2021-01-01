@@ -15,9 +15,15 @@ class UsersSeeder extends Seeder
     public function run()
     {
         Users::create([
-            'nama' => 'dummy',
+            'nama' => 'Luri',
             'tanggal_lahir' => '2020-12-12',
-            'alamat' => 'dummy',
+            'alamat' => 'surabaya',
+            'jenis_kelamin' => 'P',
+        ]);
+        Users::create([
+            'nama' => 'Andre',
+            'tanggal_lahir' => '2020-12-12',
+            'alamat' => 'sidoarjo',
             'jenis_kelamin' => 'L',
         ]);
     }
