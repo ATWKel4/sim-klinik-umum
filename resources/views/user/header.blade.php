@@ -2,7 +2,7 @@
 <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
 <div class="container d-flex">
     <div class="contact-info mr-auto">
-    <i class="icofont-envelope"></i> <a href="mailto:dr.bramatyo@klinik.com">dr.bramantyo@klinik.com</a>
+    <i class="icofont-envelope"></i> <a href="mailto:dr.bramatyo@klinik.com">klinik.sehat@mail.com</a>
     <i class="icofont-phone"></i> +62 812 3456 7890
     <i class="icofont-google-map"></i> Jl. Raya ITS Sukolilo Surabaya
     </div>
@@ -20,7 +20,7 @@
 <header id="header" class="fixed-top">
 <div class="container d-flex align-items-center">
 
-    <h1 class="logo mr-auto"><a href="index.html">Klinik</a></h1>
+    <h1 class="logo mr-auto"><a href="index.html">Klinik Sehat</a></h1>
     <!-- Uncomment below if you prefer to use an image logo -->
     <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 

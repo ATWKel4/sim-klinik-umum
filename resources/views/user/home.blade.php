@@ -7,7 +7,7 @@
     <div class="row">
     <div class="col-lg-4 d-flex align-items-stretch">
         <div class="content">
-        <h3>Mengapa harus Klinik "nama klinik" ?</h3>
+        <h3>Mengapa harus Klinik Sehat ?</h3>
         <p>
             Pelayanan yang mengutamakan <b>keselamatan</b> dan <b>kebahagian</b> pasien adalah tujuan kami.  
         </p>
@@ -419,7 +419,7 @@
         <div class="email">
             <i class="icofont-envelope"></i>
             <h4>Email:</h4>
-            <p>dr.bramantyo@klinik.com</p>
+            <p>klinik.sehat@mail.com</p>
         </div>
 
         <div class="phone">
