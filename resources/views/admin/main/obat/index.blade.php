@@ -108,7 +108,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg" class="avatar rounded-circle">
+                        <img alt="Image placeholder" src="{{ asset('./assets/img/logo-klinik-sehat.png') }}" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -198,7 +198,7 @@
               <a class="nav-link pr-0" href="datatables.html#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg">
+                    <img alt="Image placeholder" src="{{ asset('./assets/img/logo-klinik-sehat.png') }}">
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
                     <span class="mb-0 text-sm  font-weight-bold">John Snow</span>

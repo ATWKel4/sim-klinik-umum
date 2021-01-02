@@ -20,6 +20,9 @@ class DatabaseSeeder extends Seeder
                     UsersSeeder::class,
                     TindakanSeeder::class,
                     AntrianSeeder::class,
+                    ResepSeeder::class,
+                    RekamSeeder::class,
+                    InvoiceSeeder::class,
         ]);
     }
 }

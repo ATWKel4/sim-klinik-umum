@@ -14,7 +14,7 @@ class PenyakitController extends Controller
      */
     public function index()
     {
-        $penyakit = Penyakit::all();
+        $penyakit = Penyakit::select('*')->orderBy('id', 'DESC')->get();
         return view('admin.main.penyakit.index', compact('penyakit'));
         
     }
@@ -26,7 +26,7 @@ class PenyakitController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.main.penyakit.create');
     }
 
     /**
@@ -37,7 +37,10 @@ class PenyakitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $penyakit = new Penyakit;
+        $penyakit->nama = $request->nama;
+        $penyakit->save();
+        return redirect('/admin/penyakit')->with('success', 'Data penyakit berhasil ditambahkan');
     }
 
     /**
@@ -48,7 +51,7 @@ class PenyakitController extends Controller
      */
     public function show(Penyakit $penyakit)
     {
-        //
+        return view('admin.main.penyakit.show', compact('penyakit'));
     }
 
     /**
@@ -59,7 +62,7 @@ class PenyakitController extends Controller
      */
     public function edit(Penyakit $penyakit)
     {
-        //
+        return view('admin.main.penyakit.edit', compact('penyakit'));
     }
 
     /**
@@ -71,7 +74,10 @@ class PenyakitController extends Controller
      */
     public function update(Request $request, Penyakit $penyakit)
     {
-        //
+        $penyakit_baru = Penyakit::find($penyakit->id);
+        $penyakit_baru->nama = $request->nama;
+        $penyakit_baru->save();
+        return redirect('/admin/penyakit')->with('success', 'Data penyakit berhasil diubah');
     }
 
     /**
@@ -82,6 +88,7 @@ class PenyakitController extends Controller
      */
     public function destroy(Penyakit $penyakit)
     {
-        //
+        $penyakit->delete();
+        return redirect('/admin/penyakit')->with('success', 'Data penyakit berhasil dihapus');
     }
 }

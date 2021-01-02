@@ -108,7 +108,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg" class="avatar rounded-circle">
+                        <img alt="Image placeholder" src="{{ asset('./assets/img/logo-klinik-sehat.png') }}" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -198,7 +198,7 @@
               <a class="nav-link pr-0" href="datatables.html#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg">
+                    <img alt="Image placeholder" src="{{ asset('./assets/img/logo-klinik-sehat.png') }}">
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
                     <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
@@ -253,7 +253,7 @@
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="datatables.html#" class="btn btn-sm btn-neutral">New</a>
+              <a href="{{ URL::to('/admin/penyakit/create') }}" class="btn btn-sm btn-neutral">New</a>
               <a href="datatables.html#" class="btn btn-sm btn-neutral">Filters</a>
             </div>
           </div>
@@ -272,8 +272,17 @@
               <p class="text-sm mb-0">
                 Berisi Daftar penyakit yang dialami pasien
               </p>
+              @if (Session::has('success'))
+                <div class="alert alert-success alert-dismissible fade show mt-1 mb-0" role="alert">
+                  <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                  <span class="alert-text">{{ Session::get('success') }}</span>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+              @endif
             </div>
-            <div class="table-responsive py-4">
+            <div class="table-responsive py-1">
               <table class="table table-flush" id="datatable-basic">
                 <thead class="thead-light">
                   <tr>
@@ -292,15 +301,19 @@
                   <tr>
                     <td>{{ $p->nama }}</td>
                     <td>
-                      <button type="button" class="btn btn-vimeo btn-icon-only">
-                      <span class="btn-inner--icon"><i class="fa fa-eye"></i></span>
+                      <a href="{{ URL::to('/admin/penyakit/'.$p->id) }}" class="btn btn-vimeo btn-icon-only">
+                        <span class="btn-inner--icon"><i class="fa fa-eye"></i></span>
+                      </a>
+                      <a href="{{ URL::to('/admin/penyakit/'.$p->id.'/edit') }}" class="btn btn-slack btn-icon-only">
+                        <span class="btn-inner--icon"><i class="fa fa-magic"></i></span>
+                      </a>
+                      <button class="btn btn-pinterest btn-icon-only" onclick="document.getElementById('delete').submit();">
+                        <span class="btn-inner--icon"><i class="fa fa-trash"></i></span>           
                       </button>
-                      <button type="button" class="btn btn-slack btn-icon-only">
-                      <span class="btn-inner--icon"><i class="fa fa-magic"></i></span>
-                      </button>
-                      <button type="button" class="btn btn-pinterest btn-icon-only">
-                      <span class="btn-inner--icon"><i class="fa fa-trash"></i></span>
-                      </button>
+                      <form id="delete" style="display: none" method="POST" action="{{ URL::to('/admin/penyakit/'.$p->id) }}">
+                        @csrf
+                        <input type="hidden" name="_method" value="DELETE" />
+                      </form>
                     </td>
                   </tr>
                 @endforeach

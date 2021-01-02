@@ -7,6 +7,5 @@
 	<center>
 		<h4>{{ $nomor->count() }}</h4>
 	</center>
- 
 </body>
 </html>

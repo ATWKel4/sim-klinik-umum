@@ -7,6 +7,8 @@ use App\Http\Controllers\TindakanController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ObatController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,25 +31,17 @@ Route::get('/beranda', [BerandaController::class, 'index']);
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/antrian/cetak', [BerandaController::class, 'printPDF']);
 Route::get('/keluar', [AuthController::class, 'logoutAll']);
-
-Route::get('/obat', function () {
-    return view('admin.main.obat.index');
-});
-Route::get('/penyakit', [PenyakitController::class, 'index']);
-Route::get('/tindakan', [TindakanController::class, 'index']);
-Route::get('/jadwal', [JadwalController::class, 'index']);
-
 // EOF ROUTE : USER
 
 // ROUTE : ADMIN (Tidak ada sistem middleware)
-
 Route::prefix('admin')->group(function() {
     Route::get('login', [AuthController::class, 'index'])->name('get-admin-login');
     Route::post('login', [AuthController::class, 'adminLogin'])->name('admin-login');
     Route::post('logout', [AuthController::class, 'logoutAll'])->name('admin-logout');
-    Route::get('dashboard', function() {
-        return view('admin.main.dashboard');
-    });
+    Route::get('dashboard', [DashboardController::class, 'index']);
+    // Route::resource('obat', ObatController::class);
+    Route::resource('penyakit', PenyakitController::class);
+    Route::resource('tindakan', TindakanController::class);
+    Route::resource('jadwal', JadwalController::class);
 });
-
 // EOF ROUTE : ADMIN

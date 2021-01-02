@@ -26,5 +26,21 @@ class JadwalSeeder extends Seeder
             'tanggal' => '2020-12-14',
             'waktu' => '12:12:12',
         ]);
+        Jadwal::create([
+            'tanggal' => '2020-12-15',
+            'waktu' => '12:12:12',
+        ]);
+        Jadwal::create([
+            'tanggal' => '2020-12-16',
+            'waktu' => '12:12:12',
+        ]);
+        Jadwal::create([
+            'tanggal' => '2020-12-17',
+            'waktu' => '12:12:12',
+        ]);
+        Jadwal::create([
+            'tanggal' => '2020-12-18',
+            'waktu' => '12:12:12',
+        ]);
     }
 }
