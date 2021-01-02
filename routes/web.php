@@ -9,6 +9,7 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ObatController;
+use App\Http\Controllers\ResepController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RekamController;
 
@@ -43,6 +44,7 @@ Route::prefix('admin')->group(function() {
     Route::get('dashboard', [DashboardController::class, 'index']);
     Route::resource('rekam', RekamController::class);
     Route::resource('obat', ObatController::class);
+    Route::resource('resep', ResepController::class);
     Route::resource('antrian', AntrianController::class);
     Route::resource('penyakit', PenyakitController::class);
     Route::resource('tindakan', TindakanController::class);
