@@ -36,6 +36,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="{{ URL::to('/admin/tindakan') }}">
+                <i class="ni ni-bullet-list-67 text-green"></i>
+                <span class="nav-link-text">Tindakan</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{ URL::to('/admin/obat') }}">
                 <i class="ni ni-atom text-info"></i>
                 <span class="nav-link-text">Obat</span>
