@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AntrianController;
 use App\Http\Controllers\PenyakitController;
 use App\Http\Controllers\TindakanController;
 use App\Http\Controllers\JadwalController;
@@ -42,6 +43,7 @@ Route::prefix('admin')->group(function() {
     Route::get('dashboard', [DashboardController::class, 'index']);
     Route::resource('obat', ObatController::class);
     Route::resource('resep', ResepController::class);
+    Route::resource('antrian', AntrianController::class);
     Route::resource('penyakit', PenyakitController::class);
     Route::resource('tindakan', TindakanController::class);
     Route::resource('jadwal', JadwalController::class);
