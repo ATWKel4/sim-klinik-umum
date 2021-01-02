@@ -20,15 +20,6 @@
 
     @include('user.header')
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container">
-      <h1>Selamat datang di Klinik Sehat<h1>
-      <h2>Kami melayani dengan sepenuh hati</h2>
-      <a href="#about" class="btn-get-started scrollto"><b>Login</b></a>
-    </div>
-  </section><!-- End Hero -->
-
   <main id="main">
 
     @yield('content')

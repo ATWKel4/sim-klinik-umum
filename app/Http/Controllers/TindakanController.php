@@ -7,80 +7,48 @@ use Illuminate\Http\Request;
 
 class TindakanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $tindakan = Tindakan::all();
+        $tindakan = Tindakan::select('*')->orderBy('id', 'DESC')->get();
         return view('admin.main.tindakan.index', compact('tindakan'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.main.tindakan.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $tindakan = new Tindakan;
+        $tindakan->diagnosis = $request->diagnosis;
+        $tindakan->deskripsi = $request->deskripsi;
+        $tindakan->save();
+        return redirect('/admin/tindakan')->with('success', 'Data tindakan berhasil ditambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Tindakan  $tindakan
-     * @return \Illuminate\Http\Response
-     */
     public function show(Tindakan $tindakan)
     {
-        //
+        return view('admin.main.tindakan.show', compact('tindakan'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Tindakan  $tindakan
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Tindakan $tindakan)
     {
-        //
+        return view('admin.main.tindakan.edit', compact('tindakan'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tindakan  $tindakan
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Tindakan $tindakan)
     {
-        //
+        $tindakan_baru = Tindakan::find($tindakan->id);
+        $tindakan_baru->diagnosis = $request->diagnosis;
+        $tindakan_baru->deskripsi = $request->deskripsi;
+        $tindakan_baru->save();
+        return redirect('/admin/tindakan')->with('success', 'Data tindakan berhasil diubah');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Tindakan  $tindakan
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Tindakan $tindakan)
     {
-        //
+        $tindakan->delete();
+        return redirect('/admin/tindakan')->with('success', 'Data tindakan berhasil dihapus');
     }
 }

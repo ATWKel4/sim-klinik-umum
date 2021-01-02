@@ -13,6 +13,7 @@ class CreateAntrianTable extends Migration
             $table->id();
             $table->foreignId('jadwal_id')->constrained('jadwal');
             $table->foreignId('users_id')->constrained('users');
+            $table->boolean('is_finished');
             $table->timestamps();
         });
     }

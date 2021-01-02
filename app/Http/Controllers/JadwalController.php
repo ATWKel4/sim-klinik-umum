@@ -14,7 +14,7 @@ class JadwalController extends Controller
      */
     public function index()
     {
-        $jadwal = Jadwal::all();
+        $jadwal = Jadwal::select('*')->orderBy('id', 'DESC')->get();
         return view('admin.main.jadwal.index', compact('jadwal'));
     }
 
@@ -25,7 +25,7 @@ class JadwalController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.main.jadwal.create');
     }
 
     /**
@@ -36,7 +36,11 @@ class JadwalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $jadwal = new Jadwal;
+        $jadwal->tanggal = $request->tanggal;
+        $jadwal->waktu = $request->waktu;
+        $jadwal->save();
+        return redirect('/admin/jadwal')->with('success', 'Data jadwal berhasil ditambahkan');
     }
 
     /**
@@ -47,7 +51,7 @@ class JadwalController extends Controller
      */
     public function show(Jadwal $jadwal)
     {
-        //
+        return view('admin.main.jadwal.show', compact('jadwal'));
     }
 
     /**
@@ -58,7 +62,7 @@ class JadwalController extends Controller
      */
     public function edit(Jadwal $jadwal)
     {
-        //
+        return view('admin.main.jadwal.edit', compact('jadwal'));
     }
 
     /**
@@ -70,7 +74,11 @@ class JadwalController extends Controller
      */
     public function update(Request $request, Jadwal $jadwal)
     {
-        //
+        $jadwal_baru = Jadwal::find($jadwal->id);
+        $jadwal_baru->tanggal = $request->tanggal;
+        $jadwal_baru->waktu = $request->waktu;
+        $jadwal_baru->save();
+        return redirect('/admin/jadwal')->with('success', 'Data jadwal berhasil diubah');
     }
 
     /**
@@ -81,6 +89,7 @@ class JadwalController extends Controller
      */
     public function destroy(Jadwal $jadwal)
     {
-        //
+        $jadwal->delete();
+        return redirect('/admin/jadwal')->with('success', 'Data jadwal berhasil dihapus');
     }
 }

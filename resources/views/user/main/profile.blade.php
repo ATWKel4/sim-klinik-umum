@@ -1,3 +1,16 @@
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Klinik Sehat</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!--Logo -->
+    <link href="assets/img/logo-klinik-sehat.png" rel="icon">
+  
+</head>
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="{{ asset('./assets/css/profile.css') }}" rel="stylesheet">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -9,7 +22,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                    <img src="https://lh3.googleusercontent.com/proxy/aaMvYpLxY84lzvjVTtLKhwnIZl5b635yQFRN4LnqdBxBwX1RwIWdc2DRN_q2nytQ155Nr3jMlJkIp1erL3Z8eI_w_dp9zGFeZbA7IrtKbmwlJXrmaMaxWZUWHBg" alt=""/>
                     <div class="file btn btn-lg btn-primary">
                         Ubah Gambar
                         <input type="file" name="file"/>
@@ -19,12 +32,12 @@
             <div class="col-md-6">
                 <div class="profile-head">
                             <h5>
-                                Luri Shafira
+                                {{ Auth::guard('user')->user()->nama }}
                             </h5>
                             <h6>
-                                IT Student
+                                Member
                             </h6>
-                            <p class="proile-rating">Member since <br><span>13 Mei 2000</span></p>
+                            <p class="proile-rating">Member since <br><span>{{ Auth::guard('user')->user()->created_at }}</span></p>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Detail</a>
@@ -41,11 +54,11 @@
             <div class="col-md-4">
                 <div class="profile-work">
                     <p>No. HP</p>
-                    <a href="">+62 813 3063 4213</a><br/>
+                    <a href="">-</a><br/>
                     <a href=""></a><br/>
                     
                     <p>Email</p>
-                    <a href="">Lurishafa@gmail.com</a><br/>
+                    <a href="">-</a><br/>
                     <a href=""></a><br/>
                     
                 </div>
@@ -58,7 +71,7 @@
                                         <label>Id</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>2103181048</p>
+                                        <p>{{ Auth::guard('user')->user()->id }}</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -66,7 +79,7 @@
                                         <label>Nama</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>Luri</p>
+                                        <p>{{ Auth::guard('user')->user()->nama }}</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -74,7 +87,7 @@
                                         <label>Tanggal Lahir</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>13 Mei 2000</p>
+                                        <p>{{ Auth::guard('user')->user()->tanggal_lahir }}</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -82,7 +95,7 @@
                                         <label>Alamat</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>Siwalankerto</p>
+                                        <p>{{ Auth::guard('user')->user()->alamat }}</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -90,7 +103,7 @@
                                         <label>Jenis Kelamin</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>Perempuan</p>
+                                        <p>{{ Auth::guard('user')->user()->jenis_kelamin }}</p>
                                     </div>
                                 </div>
                     </div>
