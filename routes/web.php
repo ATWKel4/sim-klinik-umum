@@ -8,6 +8,7 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ObatController;
+use App\Http\Controllers\ResepController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -39,7 +40,8 @@ Route::prefix('admin')->group(function() {
     Route::post('login', [AuthController::class, 'adminLogin'])->name('admin-login');
     Route::post('logout', [AuthController::class, 'logoutAll'])->name('admin-logout');
     Route::get('dashboard', [DashboardController::class, 'index']);
-    // Route::resource('obat', ObatController::class);
+    Route::resource('obat', ObatController::class);
+    Route::resource('resep', ResepController::class);
     Route::resource('penyakit', PenyakitController::class);
     Route::resource('tindakan', TindakanController::class);
     Route::resource('jadwal', JadwalController::class);
