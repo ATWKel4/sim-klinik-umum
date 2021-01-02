@@ -248,7 +248,7 @@
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="datatables.html#"><i class="fas fa-home"></i></a></li>
                   <li class="breadcrumb-item"><a href="datatables.html#">Dashboard</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Jadwal</li>
+                  <li class="breadcrumb-item active" aria-current="page">Penyakit</li>
                 </ol>
               </nav>
             </div>
@@ -268,47 +268,46 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
-              <h3 class="mb-0">Action buttons</h3>
+              <h3 class="mb-0">Penyakit</h3>
               <p class="text-sm mb-0">
-                This is an exmaple of datatable using the well known datatables.net plugin. This is a minimal setup in order to get started fast.
+                Berisi Daftar penyakit yang dialami pasien
               </p>
             </div>
             <div class="table-responsive py-4">
-              <table class="table table-flush" id="datatable-buttons">
+              <table class="table table-flush" id="datatable-basic">
                 <thead class="thead-light">
                   <tr>
-                    <th>Tanggal</th>
-                    <th>Waktu</th>
+                    <th>Nama</th>
                     <th>Aksi</th>
-                  </tr>
+                    </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>Tanggal</th>
-                    <th>Waktu</th>
+                    <th>Nama</th>
                     <th>Aksi</th>
-                  </tr>
+                    </tr>
                 </tfoot>
                 <tbody>
-                  @foreach ($jadwal as $j)
+                @foreach ($penyakit as $p)
                   <tr>
-                  <td>{{ $j->tanggal }}</td>
-                    <td>{{ $j->waktu }}</td>
-                    <td><button type="button" class="btn btn-vimeo btn-icon-only">
+                    <td>{{ $p->nama }}</td>
+                    <td>
+                      <button type="button" class="btn btn-vimeo btn-icon-only">
                       <span class="btn-inner--icon"><i class="fa fa-eye"></i></span>
-                    </button>
-                    <button type="button" class="btn btn-slack btn-icon-only">
+                      </button>
+                      <button type="button" class="btn btn-slack btn-icon-only">
                       <span class="btn-inner--icon"><i class="fa fa-magic"></i></span>
-                    </button>
-                    <button type="button" class="btn btn-pinterest btn-icon-only">
+                      </button>
+                      <button type="button" class="btn btn-pinterest btn-icon-only">
                       <span class="btn-inner--icon"><i class="fa fa-trash"></i></span>
-                    </button></td>
+                      </button>
+                    </td>
                   </tr>
-                  @endforeach
+                @endforeach
                 </tbody>
               </table>
-            </div>
           </div>
+        </div>
         </div>
       </div>
       <!-- Footer -->
