@@ -248,7 +248,7 @@
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="datatables.html#"><i class="fas fa-home"></i></a></li>
                   <li class="breadcrumb-item"><a href="datatables.html#">Dashboard</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Penyakit</li>
+                  <li class="breadcrumb-item active" aria-current="page">Antrian</li>
                 </ol>
               </nav>
             </div>
@@ -268,39 +268,46 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
-              <h3 class="mb-0">Penyakit</h3>
+              <h3 class="mb-0">Antrian</h3>
               <p class="text-sm mb-0">
-                Berisi Daftar penyakit yang dialami pasien
+                Berisi Daftar antrian pasien
               </p>
             </div>
             <div class="table-responsive py-4">
               <table class="table table-flush" id="datatable-basic">
                 <thead class="thead-light">
                   <tr>
-                    <th>Nama</th>
+                    <th>User</th>
+                    <th>Jadwal</th>
                     <th>Aksi</th>
                     </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>Nama</th>
+                    <th>User</th>
+                    <th>Jadwal</th>
                     <th>Aksi</th>
                     </tr>
                 </tfoot>
                 <tbody>
-                @foreach ($penyakit as $p)
+                @foreach ($antrian as $a)
                   <tr>
-                    <td>{{ $p->nama }}</td>
+                    <td>{{ $a->nama }}</td>
+                    <td>{{ $a->tanggal }}</td>
                     <td>
-                      <button type="button" class="btn btn-vimeo btn-icon-only">
+                      <a href="{{ URL::to('/admin/antrian/'.$a->id) }}"  class="btn btn-vimeo btn-icon-only">
                       <span class="btn-inner--icon"><i class="fa fa-eye"></i></span>
-                      </button>
-                      <button type="button" class="btn btn-slack btn-icon-only">
+                      </a>
+                      <a href="{{ URL::to('/admin/antrian/'.$a->id.'/edit') }}" class="btn btn-slack btn-icon-only">
                       <span class="btn-inner--icon"><i class="fa fa-magic"></i></span>
+                      </a>
+                      <button class="btn btn-pinterest btn-icon-only" onclick="document.getElementById('delete').submit();">
+                        <span class="btn-inner--icon"><i class="fa fa-trash"></i></span>           
                       </button>
-                      <button type="button" class="btn btn-pinterest btn-icon-only">
-                      <span class="btn-inner--icon"><i class="fa fa-trash"></i></span>
-                      </button>
+                      <form id="delete" style="display: none" method="POST" action="{{ URL::to('/admin/antrian/'.$a->id) }}">
+                        @csrf
+                        <input type="hidden" name="_method" value="DELETE" />
+                      </form>
                     </td>
                   </tr>
                 @endforeach
