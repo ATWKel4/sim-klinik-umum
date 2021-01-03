@@ -32,7 +32,6 @@ class AuthController extends Controller
 
     public function adminLogin(Request $request)
     {
-  
       $this->validate($request, [
         'username' => 'required',
         'password' => 'required'

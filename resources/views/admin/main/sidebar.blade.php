@@ -30,6 +30,24 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="{{ URL::to('/admin/antrian') }}">
+                <i class="ni ni-user-run text-red"></i>
+                <span class="nav-link-text">Antrian</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ URL::to('/admin/rekam') }}">
+                <i class="ni ni-single-copy-04 text-green"></i>
+                <span class="nav-link-text">Rekam Medis</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ URL::to('/admin/resep') }}">
+                <i class="ni ni-paper-diploma text-pink"></i>
+                <span class="nav-link-text">Resep</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{ URL::to('/admin/jadwal') }}">
                 <i class="ni ni-calendar-grid-58 text-orange"></i>
                 <span class="nav-link-text">Jadwal</span>
@@ -51,6 +69,12 @@
               <a class="nav-link" href="{{ URL::to('/admin/penyakit') }}">
                 <i class="ni ni-single-copy-04 text-pink"></i>
                 <span class="nav-link-text">Penyakit</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ URL::to('/admin/users') }}">
+                <i class="ni ni-single-02 text-brown"></i>
+                <span class="nav-link-text">Pengguna</span>
               </a>
             </li>
           </ul>

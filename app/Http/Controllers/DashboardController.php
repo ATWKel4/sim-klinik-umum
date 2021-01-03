@@ -38,7 +38,6 @@ class DashboardController extends Controller
         $total_pasien = $this->allUser();
         $total_jenis_obat = $this->allObat();
         $total_pendapatan = $this->allPendapatan();
-
         return view('admin.main.dashboard', 
             [ 'usersChart' => $usersChart,
                 'pendapatanChart' => $pendapatanChart,

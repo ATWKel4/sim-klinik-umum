@@ -248,7 +248,7 @@
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="datatables.html#"><i class="fas fa-home"></i></a></li>
                   <li class="breadcrumb-item"><a href="datatables.html#">Dashboard</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Penyakit</li>
+                  <li class="breadcrumb-item active" aria-current="page">Pengguna</li>
                 </ol>
               </nav>
             </div>
@@ -268,9 +268,9 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
-              <h3 class="mb-0">Rekam Medis</h3>
+              <h3 class="mb-0">Users</h3>
               <p class="text-sm mb-0">
-                Berisi rekam medis kondisi pasien yang berobat
+                Berisi Daftar User
               </p>
               @if (Session::has('success'))
                 <div class="alert alert-success alert-dismissible fade show mt-1 mb-0" role="alert">
@@ -286,52 +286,43 @@
               <table class="table table-flush" id="datatable-basic">
                 <thead class="thead-light">
                   <tr>
-                    <th>Nama</th>
-                    <th>Kegunaan</th>
-                    <th>Dosis</th>
-                    <th>Kategori</th>
-                    <th>Harga</th>
-                    <th>Stock</th>
-                    <th>Aturan Pakai</th>
-                    <th>Tanggal Kadaluarsa</th>
-                    <th>Aksi</th>
-                  </tr>
+                      <th>Username</th>
+                      <th>Nama</th>
+                      <th>Tanggal Lahir</th>
+                      <th>Alamat</th>
+                      <th>Jenis Kelamin</th>
+                      <th>Aksi</th>
+                    </tr>
                 </thead>
                 <tfoot>
                   <tr>
+                    <th>Username</th>
                     <th>Nama</th>
-                    <th>Kegunaan</th>
-                    <th>Dosis</th>
-                    <th>Kategori</th>
-                    <th>Harga</th>
-                    <th>Stock</th>
-                    <th>Aturan Pakai</th>
-                    <th>Tanggal Kadaluarsa</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Alamat</th>
+                    <th>Jenis Kelamin</th>
                     <th>Aksi</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                @foreach ($obat as $o)
+                @foreach ($users as $u)
                   <tr>
-                    <td>{{ $o->nama }}</td>
-                    <td>{{ $o->kegunaan }}</td>
-                    <td>{{ $o->dosis }}</td>
-                    <td>{{ $o->kategori }}</td>
-                    <td>{{ $o->harga }}</td>
-                    <td>{{ $o->stock }}</td>
-                    <td>{{ $o->aturan_pakai }}</td>
-                    <td>{{ $o->tanggal_kadaluarsa }}</td>
+                    <td>{{ $u->username }}</td>
+                    <td>{{ $u->nama }}</td>
+                    <td>{{ $u->tanggal_lahir }}</td>
+                    <td>{{ $u->alamat }}</td>
+                    <td>{{ $u->jenis_kelamin }}</td>
                     <td>
-                      <a href="{{ URL::to('/admin/obat/'.$o->id) }}" class="btn btn-vimeo btn-icon-only">
+                      <a href="{{ URL::to('/admin/users/'.$u->id) }}" class="btn btn-vimeo btn-icon-only">
                         <span class="btn-inner--icon"><i class="fa fa-eye"></i></span>
                       </a>
-                      <a href="{{ URL::to('/admin/obat/'.$o->id.'/edit') }}" class="btn btn-slack btn-icon-only">
+                      <a href="{{ URL::to('/admin/users/'.$u->id.'/edit') }}" class="btn btn-slack btn-icon-only">
                         <span class="btn-inner--icon"><i class="fa fa-magic"></i></span>
                       </a>
                       <button class="btn btn-pinterest btn-icon-only" onclick="document.getElementById('delete').submit();">
                         <span class="btn-inner--icon"><i class="fa fa-trash"></i></span>           
                       </button>
-                      <form id="delete" style="display: none" method="POST" action="{{ URL::to('/admin/obat/'.$o->id) }}">
+                      <form id="delete" style="display: none" method="POST" action="{{ URL::to('/admin/users/'.$u->id) }}">
                         @csrf
                         <input type="hidden" name="_method" value="DELETE" />
                       </form>
